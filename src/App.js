@@ -8,6 +8,8 @@ import HookCounterFive from './components/HookCounterFive'
 import HookMouse from './components/HookMouse'
 import MouseContainer from './components/MouseContainer'
 import InternalHookCounter from './components/InternalHookCounter'
+import DataFetching from './components/DataFetching'
+import DataFetchingDetail from './components/DataFetchingDetail'
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
       {/* <HookCounterFive/> */}
       {/* <HookMouse/> */}
       {/* <MouseContainer/> */}
-      <InternalHookCounter/>
+      {/* <InternalHookCounter/> */}
+      {/* <DataFetching/> */}
+      <DataFetchingDetail/>
     </div>
   );
 }
