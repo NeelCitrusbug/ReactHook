@@ -1,3 +1,4 @@
+import React from "react";
 import logo from './logo.svg';
 import './App.css';
 import HookCounter from './components/HookCounter'
@@ -10,6 +11,11 @@ import MouseContainer from './components/MouseContainer'
 import InternalHookCounter from './components/InternalHookCounter'
 import DataFetching from './components/DataFetching'
 import DataFetchingDetail from './components/DataFetchingDetail'
+import ComponentC from './components/ComponentC'
+
+
+export const userContext = React.createContext()
+export const channelContext = React.createContext()
 
 function App() {
   return (
@@ -23,7 +29,12 @@ function App() {
       {/* <MouseContainer/> */}
       {/* <InternalHookCounter/> */}
       {/* <DataFetching/> */}
-      <DataFetchingDetail/>
+      {/* <DataFetchingDetail/> */}
+      <userContext.Provider value={'neel'}>
+        <channelContext.Provider value={'codevolution'}>
+            <ComponentC/>
+        </channelContext.Provider>
+      </userContext.Provider>
     </div>
   );
 }
