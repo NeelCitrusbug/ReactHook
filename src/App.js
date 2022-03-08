@@ -12,6 +12,8 @@ import InternalHookCounter from './components/InternalHookCounter'
 import DataFetching from './components/DataFetching'
 import DataFetchingDetail from './components/DataFetchingDetail'
 import ComponentC from './components/ComponentC'
+import CounterOne from "./components/CounterOne";
+import CounterTwo from "./components/CounterTwo";
 
 
 export const userContext = React.createContext()
@@ -30,11 +32,13 @@ function App() {
       {/* <InternalHookCounter/> */}
       {/* <DataFetching/> */}
       {/* <DataFetchingDetail/> */}
-      <userContext.Provider value={'neel'}>
+      {/* <userContext.Provider value={'neel'}>
         <channelContext.Provider value={'codevolution'}>
             <ComponentC/>
         </channelContext.Provider>
-      </userContext.Provider>
+      </userContext.Provider> */}
+      {/* <CounterOne/> */}
+      <CounterTwo/>
     </div>
   );
 }
