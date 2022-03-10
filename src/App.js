@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useReducer} from "react";
 import logo from './logo.svg';
 import './App.css';
 import HookCounter from './components/HookCounter'
@@ -14,13 +14,37 @@ import DataFetchingDetail from './components/DataFetchingDetail'
 import ComponentC from './components/ComponentC'
 import CounterOne from "./components/CounterOne";
 import CounterTwo from "./components/CounterTwo";
+import ComponentAA from "./components/ComponentAA";
+import ComponentBB from "./components/ComponentBB";
+import ComponentCC from "./components/ComponentCC";
+import DataFetchingOne from "./components/DataFetchingOne";
+import DataFetchingTwo from "./components/DataFetchingTwo";
 
 
 export const userContext = React.createContext()
 export const channelContext = React.createContext()
 
+export const CountContext = React.createContext()
+const initialState = 0
+
+const reducer = (state,action) => {
+    switch(action){
+        case "increment":
+            return state + 1
+        case "decrement":
+            return state - 1
+        case "reset":
+            return initialState
+        default:
+            return state
+    }
+}
+
+
 function App() {
+  const [count,dispatch] = useReducer(reducer, initialState)
   return (
+    <CountContext.Provider value = {{CountState:count, CountDispatch:dispatch}}>
     <div className="App">
       {/* <HookCounter/> */}
       {/* <HookCounterTwo/> */}
@@ -32,14 +56,27 @@ function App() {
       {/* <InternalHookCounter/> */}
       {/* <DataFetching/> */}
       {/* <DataFetchingDetail/> */}
+
       {/* <userContext.Provider value={'neel'}>
         <channelContext.Provider value={'codevolution'}>
             <ComponentC/>
         </channelContext.Provider>
       </userContext.Provider> */}
+
       {/* <CounterOne/> */}
-      <CounterTwo/>
+      {/* <CounterTwo/> */}
+
+
+      {/* Count - {count}
+      <ComponentAA/> 
+      <ComponentBB/>
+      <ComponentCC/>
+      */}
+
+      {/* <DataFetchingOne/> */}
+      <DataFetchingTwo/>
     </div>
+    </CountContext.Provider>
   );
 }
 
