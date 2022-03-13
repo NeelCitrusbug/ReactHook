@@ -20,6 +20,7 @@ import ComponentCC from "./components/ComponentCC";
 import DataFetchingOne from "./components/DataFetchingOne";
 import DataFetchingTwo from "./components/DataFetchingTwo";
 import ParentComponent from "./components/ParentComponent";
+import Counter_memoex from "./components/Counter_memoex";
 
 
 export const userContext = React.createContext()
@@ -77,7 +78,9 @@ function App() {
       {/* <DataFetchingOne/> */}
       {/* <DataFetchingTwo/> */}
 
-      <ParentComponent/>
+      {/* <ParentComponent/> */}
+
+      <Counter_memoex/>
     </div>
     </CountContext.Provider>
   );
